@@ -1,4 +1,4 @@
-# This code is written as part of the Course Project-1 of Exploratory Data Analysis Course in Coursera
+# This code is written as part of the Course Project-1 of Exploratory Data Analysis Course in Coursera.
 
 #---------Reading the data into the appropriate format using the "dplyr" package as learnt in 'GCD' course.
 
