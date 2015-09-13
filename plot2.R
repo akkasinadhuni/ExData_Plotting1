@@ -7,11 +7,12 @@ library(dplyr)
 tdata <- tbl_df(origdata)
 data <- filter(tdata,Date=="1/2/2007"|Date=="2/2/2007")
 data$Date <- as.Date(data$Date, "%d/%m/%Y") # Reading date as "year-month-day".
-data$Time <- strptime(data$Time,format = "%H:%M:%S")
-        
+# data$Time <- strptime(data$Time,format = "%H:%M:%S")
+data$datetime <- as.POSIXct(paste(data$Date, data$Time, sep =" "))
+
 #-----------Generating Plot----------------
         
         png(filename="plot2.png") #, width=480, height=480)
-        plot(data$Time, as.numeric(data$Global_active_power),type = "l",xlab = "", ylab = "Global Active Power (kilowatts)")
+        plot(data$datetime, as.numeric(data$Global_active_power),type = "l",xlab = "", ylab = "Global Active Power (kilowatts)")
         dev.off()
         
